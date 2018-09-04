@@ -8,7 +8,9 @@ import { configStore } from './store/index';
 import 'semantic-ui-css/semantic.min.css';
 
 const state = {
-   
+   student: {
+       regNo: 'IT16061712'
+   }
 };
 
 const store = configStore(state);

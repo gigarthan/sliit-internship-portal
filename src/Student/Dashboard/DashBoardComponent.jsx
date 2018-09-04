@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Button } from 'semantic-ui-react';
 import StudentProfile from './StudentProfileComponent';
+import { Link } from 'react-router-dom';
 
 export default class DashBoard extends Component {
   render() {
@@ -12,7 +13,7 @@ export default class DashBoard extends Component {
                     <StudentProfile />
                 </Grid.Column>
                 <Grid.Column>
-                    <Button> Begin Internship </Button>    
+                    <Link to='/student/internship/begin' ><Button> Begin Internship </Button>    </Link>
                 </Grid.Column> 
            </Grid.Row>
         </Grid>
