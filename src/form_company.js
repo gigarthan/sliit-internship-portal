@@ -32,7 +32,7 @@ class FormCompany extends Component{
             </Form.Field>
             <Form.Field>
               <label>Last Name</label>
-              <input placeholder='Last Name' />
+              <input placeholder='Supervisor' />
             </Form.Field>
             <Form.Field>
               <Checkbox label='I agree to the Terms and Conditions' />
