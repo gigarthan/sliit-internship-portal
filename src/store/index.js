@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { reactReduxFirebase } from "react-redux-firebase";
+import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import firebase from "firebase";
 import rootReducer from "./reducers/index";
 import ReduxThunk from "redux-thunk";
@@ -27,6 +27,6 @@ export function configStore(initialState) {
   return createStoreWithFirebase(
     rootReducer,
     initialState,
-    composeWithDevTools(applyMiddleware(ReduxThunk))
+    composeWithDevTools(applyMiddleware(ReduxThunk.withExtraArgument(getFirebase)))
   );
 }
