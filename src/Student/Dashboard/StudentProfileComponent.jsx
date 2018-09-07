@@ -1,24 +1,36 @@
 import React, { Component } from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 
-export default class SudentProfile extends Component {
+export default class StudentProfile extends Component {
+  renderStatus(status = "") {
+    if (status === "notStarted") {
+      return (
+        <a>
+          <Icon name="user" />
+          Internship Not Started
+        </a>
+      );
+    }
+  }
+
   render() {
+    let student = {};
+
+    if (this.props.student) {
+      student = this.props.student[0];
+    }
+
     return (
       <div>
         <Card>
           <Image src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header> {student.name} </Card.Header>
             <Card.Meta>
-              <span className="date">IT16061712</span>
+              <span className="date">{student.regNo}</span>
             </Card.Meta>
           </Card.Content>
-          <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              Internship Not Started
-            </a>
-          </Card.Content>
+          <Card.Content extra>{this.renderStatus(student.status)}</Card.Content>
         </Card>
       </div>
     );
