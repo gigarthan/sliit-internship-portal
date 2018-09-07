@@ -6,7 +6,6 @@ install:
 script: 
   - echo "script"
   - npm run build
-deploy:
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
