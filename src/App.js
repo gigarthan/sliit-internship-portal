@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input, Form, Message } from 'semantic-ui-react'
+import { Button, /* Input, Form, Message */ } from 'semantic-ui-react'
 import FormCompany from './form_company'
 
 
@@ -21,7 +21,7 @@ class App extends Component {
       <div className="App">
         <h1>Internship Portal</h1>
         <Button onClick={this.funcFormCompany}>To be filled by the company</Button>
-         <div className="FormCompany">
+         <div /* className="FormCompany" */>
          { this.state.isCompanyFormClicked? <FormCompany/>:null}
         </div> 
       </div>

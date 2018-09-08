@@ -1,20 +1,20 @@
 import React,{Component} from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form, TextArea, Input, FormButton } from 'semantic-ui-react'
 
 
 class FormCompany extends Component{
     render(){
         return(
-          <div margin="100px 100px">
-            <Form style={{margin:"100px 100px", fontSize:"2em"}}>
+          <div>
+            <Form  style={{margin:"100px 100px"}}>
+            <Form.Field
+              input fluid control={Input} placeholder='Employer Name' label='Employer Name' 
+            />
             <Form.Field>
-              <input placeholder='Employer Name' />
+              <input fluid placeholder='Employer Address' />
             </Form.Field>
             <Form.Field>
-              <input placeholder='Employer Address' />
-            </Form.Field>
-            <Form.Field>
-              <input placeholder='Supervisor Name' />
+              <input fluid placeholder='Supervisor Name' />
             </Form.Field>
             <Form.Field>
               <input placeholder='Supervisor Phone' />
@@ -35,10 +35,10 @@ class FormCompany extends Component{
               <input type='number' placeholder='No. of hours per week' />
             </Form.Field>
             <Form.Field>
-              <textarea placeholder='Please list the tasks the studet is expected to complete' />
+              <TextArea placeholder='Please list the tasks the studet is expected to complete' />
             </Form.Field>
             <Form.Field>
-              <textarea placeholder='List what the internship will learn during the internship period' />
+              <TextArea placeholder='List what the internship will learn during the internship period' />
             </Form.Field>
             <Form.Field>
               <input placeholder='External supervisor name' />
