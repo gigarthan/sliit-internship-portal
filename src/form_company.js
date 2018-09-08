@@ -35,6 +35,10 @@ class FormCompany extends Component{
               <input placeholder='Supervisor' />
             </Form.Field>
             <Form.Field>
+              <label>Company Name</label>
+              <input placeholder='Name of the company' />
+            </Form.Field>
+            <Form.Field>
               <Checkbox label='I agree to the Terms and Conditions' />
             </Form.Field>
             <Button type='submit'>Submit</Button>
