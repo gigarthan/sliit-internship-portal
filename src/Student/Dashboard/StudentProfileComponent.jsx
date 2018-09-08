@@ -24,7 +24,7 @@ export default class StudentProfile extends Component {
     let student = {};
 
     if (this.props.student) {
-      student = this.props.student[0];
+      student = this.props.student;
     }
 
     return (

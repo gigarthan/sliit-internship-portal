@@ -14,7 +14,12 @@ const firebaseConfig = {
   messagingSenderId: "505623442902"
 };
 
-const rrfConfig = {};
+const rrfConfig = {
+    userProfile: ['students', 'supervisors'],
+    profileParamsToPopulate: [
+      { child: 'role', root: 'roles' }, // populates user's role with matching role object from roles
+    ]
+};
 
 firebase.initializeApp(firebaseConfig);
 

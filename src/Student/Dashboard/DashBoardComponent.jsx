@@ -13,7 +13,7 @@ class DashBoard extends Component {
 
   renderDashboardButtons = () => {
     if(this.props.student) {
-      const student = this.props.student[0];
+      const student = this.props.selectedStudent;
       if(student.status === 'notStarted') {
         return(<Link to={`${this.props.match.url}/internship/begin`} ><Button> Begin Internship </Button></Link>)
       } 
@@ -33,7 +33,7 @@ class DashBoard extends Component {
         <Grid style={{padding:50}}>
            <Grid.Row columns={2} >
                 <Grid.Column width={4}>
-                    <StudentProfile student={this.props.student} />
+                    <StudentProfile student={this.props.selectedStudent} />
                 </Grid.Column>
                 <Grid.Column width={6}>                   
                     <Route path={`${this.props.match.url}/internship/begin`} component={RegisterForm} />
@@ -47,6 +47,24 @@ class DashBoard extends Component {
   }
 }
 
+function mapStateToProps(state) {
+
+  let selected = null;
+
+  if(state.firebase.data.students)
+  for(let s of state.firebase.data.students) {
+    if(s.email === state.firebase.auth.email) {
+      selected = s;
+    }
+  }
+
+  return({
+      student : state.firebase.data.students,
+      profile: state.firebase.profile, // load profile,
+      selectedStudent : selected
+  });
+}
+
 export default compose(
   firebaseConnect((props) => {
     return [
@@ -54,9 +72,6 @@ export default compose(
     ]
   }),
   connect(
-    (state) => ({
-      student : state.firebase.data.students,
-      // profile: state.firebase.profile // load profile
-    })
+    mapStateToProps
   )
 )(DashBoard)
