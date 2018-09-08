@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 class RegisterForm extends Component {
 
   submit = values => {
-    this.props.registerCompany(values);
+    this.props.registerCompany('IT16061712', values, this.props.history);
   }
 
   render() {
