@@ -35,6 +35,10 @@ class FormCompany extends Component{
               <input placeholder='Supervisor' />
             </Form.Field>
             <Form.Field>
+              <label>Phone</label>
+              <input placeholder='SupervisorPhone' />
+            </Form.Field>
+            <Form.Field>
               <label>Company Name</label>
               <input placeholder='Name of the company' />
             </Form.Field>
