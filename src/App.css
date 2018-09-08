@@ -22,6 +22,11 @@
   font-size: large;
 }
 
+.FormCompany {
+  font-size: large;
+  background-color: rgb(97, 27, 27);
+  color: blue;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
