@@ -1,77 +1,56 @@
 import React,{Component} from 'react'
-import { Button, Input, Form, Message } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
+/* const FormExampleForm = () => (
+  <Form>
+    <Form.Field>
+      <label>First Name</label>
+      <input placeholder='First Name' />
+    </Form.Field>
+    <Form.Field>
+      <label>Last Name</label>
+      <input placeholder='Last Name' />
+    </Form.Field>
+    <Form.Field>
+      <Checkbox label='I agree to the Terms and Conditions' />
+    </Form.Field>
+    <Button type='submit'>Submit</Button>
+  </Form>
+) */
+ 
 class FormCompany extends Component{
     render(){
         return(
-          <div>
-            <Form size='large'>
+            <Form>
             <Form.Field>
-              {/* <label>First Name</label> */}
-              <input placeholder='Employer name' control={Input}/>
+              <label>First Name</label>
+              <input placeholder='First Name' />
             </Form.Field>
             <Form.Field>
-              {/* <label>Last Name</label> */}
-              <input placeholder='Employer Address' control={Input} />
-            </Form.Field>
-            <Form.Group widths='equal'>
-            <Form.Field>
-              {/* <label>Last Name</label> */}
-              <input placeholder='Supervisor Name' />
-            </Form.Field>
-            
-            <Form.Field>
-              {/* <label>Phone</label> */}
-              <input placeholder='Supervisor Phone' />
-            </Form.Field>
-            </Form.Group>
-
-            <Form.Group widths='equal'>
-            <Form.Field>
-              {/* <label>Supervisor Title</label> */}
-              <input placeholder='Supervisor Title' />
+              <label>Last Name</label>
+              <input placeholder='Last Name' />
             </Form.Field>
             <Form.Field>
-              {/* <label>Supervisor Title</label> */}
-              <input placeholder='Supervisor Email' />
-            </Form.Field>
-            </Form.Group>
-
-            <Form.Group widths='equal'>
-            <Form.Field>
-              {/* <label>Supervisor Title</label> */}
-              <input placeholder='Internship start date' />
+              <label>Last Name</label>
+              <input placeholder='Supervisor' />
             </Form.Field>
             <Form.Field>
-              {/* <label>Supervisor Title</label> */}
-              <input placeholder='Internship end date' />
-            </Form.Field>
-            </Form.Group>
-            <Form.Field>
-              {/* <label>Company Name</label> */}
-              <input placeholder='No of hours per week' />
+              <label>Phone</label>
+              <input placeholder='SupervisorPhone' />
             </Form.Field>
             <Form.Field>
-              <textarea placeholder='Please list the tasks student is expected to complete' />
+              <label>SupervisorTitle</label>
+              <input placeholder='SupervisorTitle' />
             </Form.Field>
             <Form.Field>
-              <textarea placeholder='List what the student will learn during the internship period' />
-            </Form.Field>
-            <Form.Group widths='equal'>
-            <Form.Field>
-              {/* <label>Supervisor Title</label> */}
-              <input placeholder='External supervisor name' />
+              <label>Company Name</label>
+              <input placeholder='Name of the company' />
             </Form.Field>
             <Form.Field>
-              {/* <label>Supervisor Title</label> */}
-              <input placeholder='Date' />
+              <Checkbox label='I agree to the Terms and Conditions' />
             </Form.Field>
-            </Form.Group>
             <Button type='submit'>Submit</Button>
           </Form>  
-          <Message success header='Form Completed' content="You're all signed up for the newsletter" />
-          <div>Please e-mail this form within one week after the start date mentioned above to saman.g@sliit.lk by the external supervisor’s official e-mail  </div>  
-          </div>
         )
     }
 }
