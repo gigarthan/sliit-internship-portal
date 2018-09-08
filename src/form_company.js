@@ -1,56 +1,54 @@
 import React,{Component} from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
-/* const FormExampleForm = () => (
-  <Form>
-    <Form.Field>
-      <label>First Name</label>
-      <input placeholder='First Name' />
-    </Form.Field>
-    <Form.Field>
-      <label>Last Name</label>
-      <input placeholder='Last Name' />
-    </Form.Field>
-    <Form.Field>
-      <Checkbox label='I agree to the Terms and Conditions' />
-    </Form.Field>
-    <Button type='submit'>Submit</Button>
-  </Form>
-) */
- 
+
 class FormCompany extends Component{
     render(){
         return(
-            <Form>
+          <div margin="100px 100px">
+            <Form style={{margin:"100px 100px", fontSize:"2em"}}>
             <Form.Field>
-              <label>First Name</label>
-              <input placeholder='First Name' />
+              <input placeholder='Employer Name' />
             </Form.Field>
             <Form.Field>
-              <label>Last Name</label>
-              <input placeholder='Last Name' />
+              <input placeholder='Employer Address' />
             </Form.Field>
             <Form.Field>
-              <label>Last Name</label>
-              <input placeholder='Supervisor' />
+              <input placeholder='Supervisor Name' />
             </Form.Field>
             <Form.Field>
-              <label>Phone</label>
-              <input placeholder='SupervisorPhone' />
+              <input placeholder='Supervisor Phone' />
             </Form.Field>
             <Form.Field>
-              <label>SupervisorTitle</label>
-              <input placeholder='SupervisorTitle' />
+              <input placeholder='Supervisor Title' />
             </Form.Field>
             <Form.Field>
-              <label>Company Name</label>
-              <input placeholder='Name of the company' />
+              <input placeholder='Supervisor Email' />
             </Form.Field>
             <Form.Field>
-              <Checkbox label='I agree to the Terms and Conditions' />
+              <input placeholder='Internship Start Date' />
+            </Form.Field>
+            <Form.Field>
+              <input type='date' placeholder='Internship End Date' />
+            </Form.Field>
+            <Form.Field>
+              <input type='number' placeholder='No. of hours per week' />
+            </Form.Field>
+            <Form.Field>
+              <textarea placeholder='Please list the tasks the studet is expected to complete' />
+            </Form.Field>
+            <Form.Field>
+              <textarea placeholder='List what the internship will learn during the internship period' />
+            </Form.Field>
+            <Form.Field>
+              <input placeholder='External supervisor name' />
+            </Form.Field>
+            <Form.Field>
+              <input type='date'  />
             </Form.Field>
             <Button type='submit'>Submit</Button>
           </Form>  
+          </div>
         )
     }
 }
