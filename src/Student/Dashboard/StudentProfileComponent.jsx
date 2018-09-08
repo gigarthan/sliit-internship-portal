@@ -10,6 +10,13 @@ export default class StudentProfile extends Component {
           Internship Not Started
         </a>
       );
+    } else if (status === 'submitI1Form') {
+      return (
+        <a>
+          <Icon name="user" />
+          Submit I1 Form
+        </a>
+      );
     }
   }
 
