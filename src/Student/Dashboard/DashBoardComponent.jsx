@@ -9,6 +9,11 @@ import { firebaseConnect } from 'react-redux-firebase'
 
 
 class DashBoard extends Component {
+
+  renderStatusButton = () => {
+    
+  }
+
   render() {
     return (
       <Container fluid>
