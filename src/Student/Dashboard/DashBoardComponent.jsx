@@ -10,8 +10,20 @@ import FormI1 from '../FormI1/FormI1Component';
 
 class DashBoard extends Component {
 
-  renderStatusButton = () => {
-    
+
+  renderDashboardButtons = () => {
+    if(this.props.student) {
+      const student = this.props.student[0];
+      if(student.status === 'notStarted') {
+        return(<Link to={`${this.props.match.url}/internship/begin`} ><Button> Begin Internship </Button></Link>)
+      } 
+      else if (student.status === 'submitI1Form') {
+        return(<Link to={`${this.props.match.url}/internship/forms/i1`} ><Button> Submit I1 Form </Button></Link>)
+      }
+    }
+    else {
+      return(<div>Loading...</div>)
+    }
   }
 
 
@@ -26,7 +38,7 @@ class DashBoard extends Component {
                 <Grid.Column width={6}>                   
                     <Route path={`${this.props.match.url}/internship/begin`} component={RegisterForm} />
                     <Route path={`${this.props.match.url}/internship/forms/i1`} component={FormI1} />
-                    <Route exact path={`${this.props.match.url}`}  render={() => { return <Link to={`${this.props.match.url}/internship/begin`} ><Button> Begin Internship </Button></Link> }} />
+                    <Route exact path={`${this.props.match.url}`}  render={this.renderDashboardButtons} />
                 </Grid.Column>
            </Grid.Row>
         </Grid>

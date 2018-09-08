@@ -10,7 +10,7 @@ export function registerCompany (regNo, values, history) {
                 dispatch({
                     type: REGISTER_COMPANY
                 });
-                history.push('/student');
+                history.push('/students');
             });
     };
 }
