@@ -3,8 +3,9 @@ import { Dropdown } from 'semantic-ui-react'
 
 class SupervisorDropDown extends Component {
     render() {
+        console.log(this.props.supervisor)
         return (
-            <Dropdown text={}>
+            <Dropdown text={(Object.keys(this.props.supervisor).length === 0 && this.props.supervisor.constructor === Object) ? "Not-Allocated" : this.props.supervisor.name}>
                 <Dropdown.Menu>
                     <Dropdown.Item text='New' />
                     <Dropdown.Item text='Open...' description='ctrl + o' />

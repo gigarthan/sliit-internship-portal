@@ -16,9 +16,7 @@ const Intern = (props) => (
                 <Card.Content extra>
 
                     <Icon name='info' />
-                    Supervisor:  <SupervisorDropDown supervisor={props.supervisor} />
-                    {console.log(props.supervisor)}
-
+                    Supervisor:  <SupervisorDropDown supervisor={props.supervisor} supervisors={props.supervisors} />
                 </Card.Content>
             </Card>
         </Card.Group>
