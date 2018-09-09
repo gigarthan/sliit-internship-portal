@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Image, Button } from "semantic-ui-react";
+import {logout} from '../../store/actions/auth_actions';
+import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-export default class StudentProfile extends Component {
+
+class StudentProfile extends Component {
   renderStatus(status = "") {
     if (status === "notStarted") {
       return (
@@ -15,6 +19,13 @@ export default class StudentProfile extends Component {
         <a>
           <Icon name="user" />
           Submit I1 Form
+        </a>
+      );
+    } else if(status === 'i1FormSubmitted') {
+      return (
+        <a>
+          <Icon name="user" />
+            I1 Form Submitted
         </a>
       );
     }
@@ -38,8 +49,11 @@ export default class StudentProfile extends Component {
             </Card.Meta>
           </Card.Content>
           <Card.Content extra>{this.renderStatus(student.status)}</Card.Content>
+          <Card.Content><Button onClick={() => { this.props.logout(this.props.history) }} >Logout</Button></Card.Content>
         </Card>
       </div>
     );
   }
 }
+
+export default withRouter(connect(null, {logout})(StudentProfile));

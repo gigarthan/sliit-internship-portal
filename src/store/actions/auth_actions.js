@@ -1,6 +1,6 @@
-import { LOGIN, LOGGEDIN, LOGIN_ERROR } from '../types'
+import { LOGIN, LOGGEDIN, LOGIN_ERROR, LOGOUT } from '../types'
 
-export function login(credentials) {
+export function login(credentials, history) {
     console.log(credentials);
     return async (dispatch, getState, getFirebase) => {
         const firebase = getFirebase();
@@ -12,6 +12,7 @@ export function login(credentials) {
                     dispatch({
                         type: LOGGEDIN
                     });
+                    history.push('/students');
                 })
                 .catch(err => {
                     dispatch({
@@ -19,5 +20,19 @@ export function login(credentials) {
                     })
                     console.log(err);
                 })
+    }
+}
+
+export function logout(history) {
+    return async (dispatch, getState, getFirebase) => {
+        const firebase = getFirebase();
+        firebase
+        .logout()
+        .then(() => {
+            dispatch({
+                type:LOGOUT
+            });
+            history.push('/')
+        });
     }
 }
