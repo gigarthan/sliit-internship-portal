@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card, Icon, Segment } from 'semantic-ui-react'
-import DropdownExampleDropdown from './DropdownExampleDropdown';
+import SupervisorDropDown from './SupervisorDropDown';
 
-const CardExampleCard = (props) => (
+const Intern = (props) => (
     <Segment clearing>
         <Card.Group>
             <Card color="green">
@@ -11,13 +11,13 @@ const CardExampleCard = (props) => (
                     <Card.Meta>
                         <span className='date'>{props.email}</span>
                     </Card.Meta>
-                    <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
+                    <Card.Description></Card.Description>
                 </Card.Content>
                 <Card.Content extra>
 
                     <Icon name='info' />
-                    Supervisor:  <DropdownExampleDropdown supervisor={props.supervisor} />
-
+                    Supervisor:  <SupervisorDropDown supervisor={props.supervisor} />
+                    {console.log(props.supervisor)}
 
                 </Card.Content>
             </Card>
@@ -25,4 +25,4 @@ const CardExampleCard = (props) => (
     </Segment>
 )
 
-export default CardExampleCard;
+export default Intern;
