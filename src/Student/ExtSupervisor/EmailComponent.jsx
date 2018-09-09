@@ -6,7 +6,11 @@ export default class MailForm extends Component {
     return (
       <Container>
         <Form>
-        <Form.Field>
+          <Form.Field>
+            <label>Send From</label>
+            <input placeholder="Email" type="email" />
+          </Form.Field>
+          <Form.Field>
             <label>Send To</label>
             <input placeholder="Email" type="email" />
           </Form.Field>
