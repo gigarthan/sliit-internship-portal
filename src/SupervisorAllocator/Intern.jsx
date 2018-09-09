@@ -4,11 +4,13 @@ import SupervisorDropDown from './SupervisorDropDown';
 
 class Intern extends Component {
     render() {
-        return (
 
+        let newIntern = (Object.keys(this.props.supervisor).length === 0 && this.props.supervisor.constructor === Object);
+
+        return (
             <Segment clearing>
                 <Card.Group>
-                    <Card color="green">
+                    <Card color={newIntern ? "green" : "brown"}>
                         <Card.Content>
                             <Card.Header>{this.props.name}</Card.Header>
                             <Card.Meta>
@@ -18,7 +20,7 @@ class Intern extends Component {
                         </Card.Content>
                         <Card.Content extra>
 
-                            <Icon name='info' />
+                            <Icon name={newIntern ? 'info' : ''} />
                             Supervisor:  <SupervisorDropDown supervisor={this.props.supervisor} supervisors={this.props.supervisors} onSelect={(e, data) => this.props.onSelected(e, data, this.props.id)} />
                         </Card.Content>
                     </Card>
