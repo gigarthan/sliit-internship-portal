@@ -29,7 +29,6 @@ class App extends Component {
             <Route exact path='/' render={this.renderLogin} />
           </Switch>
         </Router>
-
       </div>
     );
   }
