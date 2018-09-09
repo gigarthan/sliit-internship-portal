@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Intern from './SupervisorAllocator/Intern';
+import InternList from './SupervisorAllocator/InternList';
 
 
 class App extends Component {
     state = {
         companies: [
-            { id: 1, name: "Softlogic" },
-            { id: 2, name: "Hardlogic" },
-            { id: 3, name: "99x" }
+            { id: 1, companyName: "Softlogic" },
+            { id: 2, companyName: "Hardlogic" },
+            { id: 3, companyName: "99x" }
         ],
         supervisors: [
             { id: 1, key: 1, name: "Peter", title: "UX", email: "peter@gmail.com", companyid: 1, allocatedinterns: 0 },
@@ -31,13 +31,11 @@ class App extends Component {
         this.state.interns[intIndex].supervisor = selectedSupervisor;
         this.forceUpdate();
     }
+
     render() {
         return (
             <div className="App">
-                {this.state.interns.map(intern => (
-                    <Intern key={intern.id} id={intern.id} name={intern.name} email={intern.email} supervisor={intern.supervisor} supervisors={this.state.supervisors} onSelected={this.handleSelection} />
-
-                ))}
+                <InternList interns={this.state.interns} supervisors={this.state.supervisors} selection={this.handleSelection} />
             </div>
         );
     }
