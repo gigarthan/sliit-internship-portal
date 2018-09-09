@@ -17,7 +17,6 @@ class App extends Component {
             <Route path='/students' component={DashBoard} />
           </Switch>
         </Router>
-
       </div>
     );
   }
