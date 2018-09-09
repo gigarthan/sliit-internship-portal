@@ -19,3 +19,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
+src/db/seed.json
+yarn.lock
+.firebase/hosting.YnVpbGQ.cache

@@ -1,0 +1,1 @@
+export const REGISTER_COMPANY = 'REGISTER_COMPANY';
