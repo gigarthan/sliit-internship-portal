@@ -19,7 +19,7 @@ class Intern extends Component {
                         <Card.Content extra>
 
                             <Icon name='info' />
-                            Supervisor:  <SupervisorDropDown supervisor={this.props.supervisor} supervisors={this.props.supervisors} onSelect={(e, data) => this.props.onSelected(e, data)} />
+                            Supervisor:  <SupervisorDropDown supervisor={this.props.supervisor} supervisors={this.props.supervisors} onSelect={(e, data) => this.props.onSelected(e, data, this.props.id)} />
                         </Card.Content>
                     </Card>
                 </Card.Group>

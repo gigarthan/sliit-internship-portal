@@ -24,14 +24,18 @@ class App extends Component {
         ]
     }
 
-    handleSelection = (e, data) => {
-        console.log(data);
+    handleSelection = (e, data, internid) => {
+        const [selectedSupervisor] = this.state.supervisors.filter((s) => s.id === data.id);
+
+        let intIndex = this.state.interns.findIndex((intern) => intern.id === internid);
+        this.state.interns[intIndex].supervisor = selectedSupervisor;
+        this.forceUpdate();
     }
     render() {
         return (
             <div className="App">
                 {this.state.interns.map(intern => (
-                    <Intern key={intern.id} name={intern.name} email={intern.email} supervisor={intern.supervisor} supervisors={this.state.supervisors} onSelected={this.handleSelection} />
+                    <Intern key={intern.id} id={intern.id} name={intern.name} email={intern.email} supervisor={intern.supervisor} supervisors={this.state.supervisors} onSelected={this.handleSelection} />
 
                 ))}
             </div>
