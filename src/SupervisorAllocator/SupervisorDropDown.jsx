@@ -10,7 +10,7 @@ class SupervisorDropDown extends Component {
             >
                 <Dropdown.Menu>
                     {this.props.supervisors.map(supervisor =>
-                        <Dropdown.Item key={supervisor.id} text={supervisor.name} description={supervisor.allocatedInterns} onClick={(event, data) => this.props.onSelect(event, data)} />
+                        <Dropdown.Item key={supervisor.id} id={supervisor.id} text={supervisor.name} description={supervisor.allocatedInterns} onClick={(event, data) => this.props.onSelect(event, data)} />
                     )}
 
                 </Dropdown.Menu>
