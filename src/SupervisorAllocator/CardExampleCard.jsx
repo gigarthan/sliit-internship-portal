@@ -1,23 +1,28 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Segment } from 'semantic-ui-react'
+import DropdownExampleDropdown from './DropdownExampleDropdown';
 
 const CardExampleCard = (props) => (
-    <Card>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
-        <Card.Content>
-            <Card.Header>{props.name}</Card.Header>
-            <Card.Meta>
-                <span className='date'>Joined in 2015</span>
-            </Card.Meta>
-            <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-            <a>
-                <Icon name='user' />
-                22 Friends
-      </a>
-        </Card.Content>
-    </Card>
+    <Segment clearing>
+        <Card.Group>
+            <Card color="green">
+                <Card.Content>
+                    <Card.Header>{props.name}</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>{props.email}</span>
+                    </Card.Meta>
+                    <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+
+                    <Icon name='info' />
+                    Supervisor:  <DropdownExampleDropdown supervisor={props.supervisor} />
+
+
+                </Card.Content>
+            </Card>
+        </Card.Group>
+    </Segment>
 )
 
 export default CardExampleCard;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardExampleCard from './SupervisorAllocator/CardExampleCard';
+import CardExampleGroups from './SupervisorAllocator/CardExampleGroups';
 
 
 class App extends Component {
@@ -16,17 +17,18 @@ class App extends Component {
 
     ],
     interns: [
-      { id: 1, name: "Max", position: "SE", supervisor: {}, companyId: 1 },
-      { id: 1, name: "Max", position: "SE", supervisor: {}, companyId: 1 },
-      { id: 1, name: "Max", position: "SE", supervisor: {}, companyId: 1 },
-      { id: 1, name: "Max", position: "SE", supervisor: {}, companyId: 3 },
-      { id: 1, name: "Max", position: "SE", supervisor: {}, companyId: 3 }
+      { id: 1, name: "Max", email: "max@gmail.com", supervisor: {}, companyId: 1 },
+      { id: 2, name: "Mary", email: "Mary@gmail.com", supervisor: {}, companyId: 1 },
+      { id: 3, name: "Jack", email: "Jack@gmail.com", supervisor: {}, companyId: 1 },
+      { id: 4, name: "Tim", email: "Tim@gmail.com", supervisor: {}, companyId: 3 },
+      { id: 5, name: "Jerry", email: "Jerry@gmail.com", supervisor: {}, companyId: 3 }
     ]
   }
   render() {
     return (
       <div className="App">
-        <CardExampleCard name="Max" />
+        <CardExampleCard name="Max" email="max@gmail.com" supervisor="" />
+        <CardExampleGroups />
       </div>
     );
   }
