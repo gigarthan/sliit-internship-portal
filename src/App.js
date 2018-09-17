@@ -12,7 +12,7 @@ class App extends Component {
   renderLogin = () => {
     return(
       <div >
-        <Login style={{margin:'20 auto'}} />
+        <Login  />
       </div>
     )
   }

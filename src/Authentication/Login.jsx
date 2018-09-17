@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 
 const LoginForm = ({ handleSubmit, login, history }) => (
-  <Card >
+  <Card style={ { marginTop: '20px' ,marginLeft: 'auto', marginRight : 'auto' } } >
     <Card.Content>
       <Form onSubmit={handleSubmit((val) => { login(val, history ) })}>
         <Form.Field>
