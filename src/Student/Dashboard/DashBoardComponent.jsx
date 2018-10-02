@@ -8,6 +8,7 @@ import { compose } from "redux";
 import { firebaseConnect } from "react-redux-firebase";
 import FormI1 from "../FormI1/FormI1Component";
 import CompanyDetail from "./CompanyDetail";
+import I1Detail from "./I1Detail";
 
 class DashBoard extends Component {
   getStudentStatus = () => {
@@ -54,7 +55,7 @@ class DashBoard extends Component {
       } else if (student.status === "i1FormSubmitted") {
         return (
           <div>
-            <h3>Waiting for supervior to submit I1 Form</h3>
+            
           </div>
         );
       }
@@ -87,6 +88,16 @@ class DashBoard extends Component {
     }
   };
 
+  renderI1Detail = () => {
+    if (this.props.selectedStudent) {
+      return (
+        <Grid.Column width={5}>
+          <I1Detail i={this.props.selectedStudent.formI1} />
+        </Grid.Column>
+      );
+    }
+  };
+
   render() {
     return (
       <Container fluid>
@@ -102,6 +113,7 @@ class DashBoard extends Component {
                 <Grid.Column width={5}>
                   {this.renderCompanyDetail()}
                 </Grid.Column>
+                { this.renderI1Detail() }
                 <Grid.Column width={11}>
                   {this.renderInternalRouting()}
                 </Grid.Column>
