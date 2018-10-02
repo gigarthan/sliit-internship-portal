@@ -1,0 +1,11 @@
+.header-wrapper {
+    /* height: 80px; */
+    background-color: #000000;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.header-wrapper .header {
+    color: #ffffff;
+}
