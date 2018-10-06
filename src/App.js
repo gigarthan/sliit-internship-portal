@@ -5,7 +5,7 @@ import Header from './Nav/Header';
 import Dashboard from './Student/Dashboard/DashBoardComponent';
 import './App.css';
 import CompanyForm from './Company/CompanyForm';
-
+import Company from './Allocation/Company';
 
 class App extends Component {
 
