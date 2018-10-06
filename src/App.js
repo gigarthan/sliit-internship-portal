@@ -5,14 +5,14 @@ import Header from './Nav/Header';
 import Dashboard from './Student/Dashboard/DashBoardComponent';
 import './App.css';
 import CompanyForm from './Company/CompanyForm';
-
+import Company from './Allocation/Company';
 
 class App extends Component {
 
   renderLogin = () => {
-    return(
+    return (
       <div >
-        <Login  />
+        <Login />
       </div>
     )
   }
@@ -25,7 +25,8 @@ class App extends Component {
 
           <Switch>
             <Route path='/students' component={Dashboard} />
-            <Route path='/company/form-i1'component={CompanyForm} />
+            <Route path='/company/form-i1' component={CompanyForm} />
+            <Route path="/company/:company_id" component={Company} />
             <Route exact path='/' render={this.renderLogin} />
           </Switch>
         </Router>
