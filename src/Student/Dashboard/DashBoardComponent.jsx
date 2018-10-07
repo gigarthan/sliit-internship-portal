@@ -36,7 +36,6 @@ class DashBoard extends Component {
             }}
           >
             <Card style={{ padding: 20 }}>
-              {" "}
               <Card.Header>Begin Your Internship Journey</Card.Header>{" "}
             </Card>
           </Link>
@@ -83,7 +82,7 @@ class DashBoard extends Component {
   );
 
   renderCompanyDetail = () => {
-    if (this.props.selectedStudent) {
+    if (this.props.selectedStudent && this.props.selectedStudent.company) {
       return <CompanyDetail company={this.props.selectedStudent.company} />;
     }
   };

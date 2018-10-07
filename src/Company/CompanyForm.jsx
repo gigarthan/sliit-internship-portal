@@ -5,10 +5,12 @@ import {
   Checkbox,
   Form,
   Card,
-  Grid
+  Grid,Image
 } from "semantic-ui-react";
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { compose } from "redux";
+import { firebaseConnect } from "react-redux-firebase";
 import { submitI1Form } from '../store/actions/company_actions';
 
 class CompanyForm extends Component {
@@ -16,22 +18,30 @@ class CompanyForm extends Component {
   const { handleSubmit } = this.props;
 
     return (
-      <Container style={{padding:20}} >
+      <Container fluid style={{padding:20}} >
+
         <Grid>
-          <Grid.Column>
+          <Grid.Column width="4">
+          
+        <Card>
+          <Image src="https://react.semantic-ui.com/images/avatar/large/matthew.png" />
+          <Card.Content>
+            <Card.Header> {this.props.company?this.props.company[0].name:null} </Card.Header>
+       
+          </Card.Content>
+          <Card.Content extra></Card.Content>
+          <Card.Content><Button onClick={() => { this.props.logout(this.props.history) }} >Logout</Button></Card.Content>
+        </Card>
+          </Grid.Column>
+         
+          <Grid.Column width={8}>
+              
             <Grid.Row width={6}>
               <Card fluid>
                 <Card.Content>
                   <Container>
                     <Form onSubmit={handleSubmit((val) => { this.props.submitI1Form('0', val) })} >
-                      <Form.Field>
-                        <label>Employer's Name</label>
-                        <Field name="companyName" type="text" component="input" />
-                      </Form.Field>
-                      <Form.Field>
-                        <label>Employer's address</label>
-                        <Field name="employerAddress" type="text" component="input" />
-                      </Form.Field>
+                     
                       <Form.Field>
                         <label>Supervisor's Name</label>
                         <Field name="supervisorName" type="text" component="input" />
@@ -82,34 +92,61 @@ class CompanyForm extends Component {
                       <Form.Field>
                         <label>External supervisor's Name</label>
                         <Field name="extSupName" type="text" component="input" />
-                      </Form.Field>
-                      {/* <Form.Field>
-                        <label>
-                          List what the student will learn during the internship
-                          period
-                        </label>
-                        <textarea
-                          placeholder="List what the student will learn during the internship period"
-                          type="date"
-                        />
-                        <Field name="companyName" type="text" component="input" />
-
-                      </Form.Field> */}
+                      </Form.Field >
                       <Button type="submit">Submit</Button>
+                      <Button>Email the form i1</Button>
                     </Form>
                   </Container>
                 </Card.Content>
               </Card>
             </Grid.Row>
           </Grid.Column>
+          <Grid.Column width={2}>
+          <div><h3>Interns from Sri Lanka Institute of Information Technology</h3>
+          <ul>
+            <li>Amila Nuwan</li>
+          <li>Gigarthan</li>
+          <li>Vithu</li>
+          </ul>
+          </div>
+          </Grid.Column>
         </Grid>
       </Container>
     );
   }
 }
+function mapStateToProps(state) {
+  let selected = null;
+  let i = null;
 
+  if (state.firebase.data.students)
+    for (let [index, s] of state.firebase.data.students.entries()) {
+      if (!s) {
+        continue;
+      }
+
+      if (s.email === state.firebase.auth.email) {
+        selected = s;
+        i = index;
+      }
+    }
+
+  return {
+    student: state.firebase.data.students,
+    company:state.firebase.data.companies,
+    profile: state.firebase.profile, // load profile,
+    selectedStudent: selected,
+    index: i,
+  };
+}
 const CompForm = reduxForm({
   form: 'companyForm'
 })(CompanyForm);
 
-export default connect(null, { submitI1Form })(CompForm);
+export default compose(
+  firebaseConnect(props => {
+    return ["companies"];
+  }),
+  connect(mapStateToProps, { submitI1Form })
+)(CompForm);
+

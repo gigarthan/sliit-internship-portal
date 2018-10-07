@@ -1,7 +1,6 @@
 import { LOGIN, LOGGEDIN, LOGIN_ERROR, LOGOUT } from '../types'
 
 export function login(credentials, history) {
-    console.log(credentials);
     return async (dispatch, getState, getFirebase) => {
         const firebase = getFirebase();
         console.log('c', credentials);
@@ -12,7 +11,14 @@ export function login(credentials, history) {
                     dispatch({
                         type: LOGGEDIN
                     });
-                    history.push('/students');
+
+                    if(credentials.email.indexOf('sliit.lk')) {
+                        history.push('/students');
+                    } else {
+                        history.push('/company/form-i1');
+                    }
+
+                    
                 })
                 .catch(err => {
                     dispatch({
