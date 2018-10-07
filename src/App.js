@@ -6,7 +6,7 @@ import Dashboard from './Student/Dashboard/DashBoardComponent';
 import './App.css';
 import CompanyForm from './Company/CompanyForm';
 import Checker from './Authentication/Checker';
-
+import EmailForm from './Company/EmailForm';
 
 class App extends Component {
 
@@ -27,6 +27,7 @@ class App extends Component {
           <Switch>
             <Route path='/students' component={Dashboard} />
             <Route path='/company/form-i1'component={CompanyForm} />
+            <Route path='/company/email' component={EmailForm} />
             <Route exact path='/' render={this.renderLogin} />
           </Switch>
         </Router>

@@ -3,13 +3,13 @@ import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import { Container, Button, Checkbox, Form, Card } from "semantic-ui-react";
-import { sendmail } from "../store/actions/mail_actions";
+// import { sendmail } from "../store/actions/mail_actions";
 import {firebaseConnect} from 'react-redux-firebase';
 import {compose} from 'redux';
 
 class EmailForm extends Component {
     submit = values => {
-      this.props.sendmail(this.props.location.state.index, values, this.props.history);
+      // this.props.sendmail(this.props.location.state.index, values, this.props.history);
     }; 
 
 render() {
@@ -69,4 +69,4 @@ const mailForm = reduxForm({
   }
   export default compose(firebaseConnect(props=>{return ["companies"];}),connect(
     mapStateToProps,
-    {sendmail}))(withRouterComp);
+    ))(withRouterComp);
