@@ -28,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
     let companyId = Number(ownProps.match.params.company_id);
 
     return {
-        interns: state.interns.filter(intern => intern.companyId === companyId)
+        interns: state.companies.interns.filter(intern => intern.companyId === companyId)
     }
 }
 

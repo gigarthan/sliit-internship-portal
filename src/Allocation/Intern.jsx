@@ -31,7 +31,7 @@ class Intern extends Component {
 const mapStateToProps = (state, ownProps) => {
 
     return {
-        intern: state.interns.find(intern => intern.id === ownProps.internId)
+        intern: state.companies.interns.find(intern => intern.id === ownProps.internId)
     }
 }
 

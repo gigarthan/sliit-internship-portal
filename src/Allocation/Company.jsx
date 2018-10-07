@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
     let id = Number(ownProps.match.params.company_id);
 
     return {
-        company: state.companies.find(company => company.id === id)
+        company: state.companies.companies.find(company => company.id === id)
     }
 }
 

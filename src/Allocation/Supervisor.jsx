@@ -60,8 +60,8 @@ class Supervisor extends Component {
 const mapStateToProps = (state, ownProps) => { //also passed ownProps (here the supervisorId we set in Intern) to be passed along with new props created below to this component.
 
     return {
-        supervisor: state.supervisors.find(supervisor => supervisor.id === ownProps.intern.supervisor),
-        supervisorList: state.supervisors.filter(supervisor => supervisor.companyId === ownProps.companyId)
+        supervisor: state.companies.supervisors.find(supervisor => supervisor.id === ownProps.intern.supervisor),
+        supervisorList: state.companies.supervisors.filter(supervisor => supervisor.companyId === ownProps.companyId)
     }
 }
 

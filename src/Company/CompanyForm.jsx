@@ -49,7 +49,7 @@ class CompanyForm extends Component {
                       </Form.Field>
                       <Form.Field>
                         <label>Supervisor's Phone</label>
-                        <Field name="supNumber" type="text" component="input" />
+                        <Field name="supNumber" type="number" component="input" />
 
                       </Form.Field>
                       <Form.Field>
@@ -59,7 +59,7 @@ class CompanyForm extends Component {
                       </Form.Field>
                       <Form.Field>
                         <label>Supervisor's email</label>
-                        <Field name="supEmail" type="text" component="input" />
+                        <Field name="supEmail" type="email" component="input" />
 
                       </Form.Field>
                       <Form.Field>

@@ -6,7 +6,7 @@ import allocationReducer from './allocationReducer';
 const rootReducer = combineReducers({
     form: formReducer,
     firebase: firebaseReducer,
-    allocationReducer
+    companies: allocationReducer
 });
 
 export default rootReducer;
