@@ -29,7 +29,7 @@ class CompanyForm extends Component {
             <Card.Header> {this.props.company?this.props.company[0].name:null} </Card.Header>
        
           </Card.Content>
-          <Card.Content extra>this.renderStatus(student.status)</Card.Content>
+          <Card.Content extra></Card.Content>
           <Card.Content><Button onClick={() => { this.props.logout(this.props.history) }} >Logout</Button></Card.Content>
         </Card>
           </Grid.Column>

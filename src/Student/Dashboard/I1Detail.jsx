@@ -33,15 +33,15 @@ export default ({ i }) => {
             </List.Item>
             <List.Item>
               <List.Icon name="linkify" />
-              <List.Content>{ i.cgpa }</List.Content>
+              <List.Content>CGPA : { i.cgpa }</List.Content>
             </List.Item>
             <List.Item>
               <List.Icon name="linkify" />
-              <List.Content>{ i.semester }</List.Content>
+              <List.Content>Semester : { i.semester }</List.Content>
             </List.Item>
             <List.Item>
               <List.Icon name="linkify" />
-              <List.Content>{ i.year }</List.Content>
+              <List.Content>Year : { i.year }</List.Content>
             </List.Item>
           </List>
         </Card.Description>

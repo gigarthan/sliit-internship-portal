@@ -15,7 +15,7 @@ export function login(credentials, history) {
                     if(credentials.email.indexOf('sliit.lk')) {
                         history.push('/students');
                     } else {
-                        history.push('/company');
+                        history.push('/company/form-i1');
                     }
 
                     
