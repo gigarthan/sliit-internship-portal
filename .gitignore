@@ -23,3 +23,6 @@ yarn.lock
 src/db/seed.json
 yarn.lock
 .firebase/hosting.YnVpbGQ.cache
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/sliit-internship-portal/v15/.suo
